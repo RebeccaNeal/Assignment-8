@@ -1,0 +1,39 @@
+---
+title: "Assignment 8"
+author: "Rebecca Neal"
+date: 3 April 2020
+version: 1.0
+output: html_notebook
+---
+
+This is for EDRM 718 Assignment 8 in which we will practice writing scripts and
+use the tidy verse package
+
+```{r}
+library(tidyverse)
+```
+
+
+This is developing a script
+```{r}
+Likert_Total <- function(x){
+  CC <- rowSums(x)
+  return(CC)
+}
+```
+
+
+Load in data
+```{r Loading in Data, include=FALSE}
+HD <- read_csv("Howard's Data.csv")
+HD
+```
+
+
+
+This is practicing that script with () data
+```{r}
+Howard_Data <- Likert_Total(HD[-1])
+Howard_Data
+```
+
