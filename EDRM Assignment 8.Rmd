@@ -20,10 +20,11 @@ This is developing a script
 Likert_Total <- function(x,y,z){
   Reversed <- abs(x[,c(z)]-y)
   Non_Reversed_Columns <- x[,-z]
-  New_Data_Frame <- cbind(Non_Reversed_Columns,Reversed)
-  CC <- rowSums(x)
-  print(New_Data_Frame)
-  return(New_Data_Frame)
+  Properly_Scored_Data_Frame <- cbind(Non_Reversed_Columns,Reversed)
+  CC <- rowSums(Properly_Scored_Data_Frame)
+  Total_Data_Frame <- cbind(Properly_Scored_Data_Frame,CC)
+  print(Total_Data_Frame)
+  return(Total_Data_Frame)
 }
 ```
 
