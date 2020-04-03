@@ -18,9 +18,9 @@ library(tidyverse)
 This is developing a script
 ```{r}
 Likert_Total <- function(x,y,z){
-  HD_Reversed <- abs(x[,c(z)]-y)
+  Reversed <- abs(x[,c(z)]-y)
   Non_Reversed_Columns <- x[,-z]
-  New_Data_Frame <- cbind(Non_Reversed_Columns,HD_Reversed)
+  New_Data_Frame <- cbind(Non_Reversed_Columns,Reversed)
   CC <- rowSums(x)
   print(New_Data_Frame)
   return(New_Data_Frame)
