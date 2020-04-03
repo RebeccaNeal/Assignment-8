@@ -18,9 +18,12 @@ library(tidyverse)
 This is developing a script
 ```{r}
 Likert_Total <- function(x,y,z){
-  HD_Reversed <- abs(z-y)
+  HD_Reversed <- abs(x[,c(z)]-y)
+  Non_Reversed_Columns <- x[,-z]
+  New_Data_Frame <- cbind(Non_Reversed_Columns,HD_Reversed)
   CC <- rowSums(x)
-  return(HD_Reversed)
+  print(New_Data_Frame)
+  return(New_Data_Frame)
 }
 ```
 
@@ -36,7 +39,8 @@ HD
 
 This is practicing that script with () data
 ```{r}
-Howard_Data <- Likert_Total(HD, 8, HD[,c(3,5,7)])
+CTR <- c(3,5,7)
+Howard_Data <- Likert_Total(HD, 8, CTR)
 Howard_Data
 ```
 
