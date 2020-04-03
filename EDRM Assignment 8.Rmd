@@ -36,7 +36,7 @@ HD
 
 This is practicing that script with () data
 ```{r}
-Howard_Data <- Likert_Total(HD, 7, HD[,c(3,5,7)])
+Howard_Data <- Likert_Total(HD, 8, HD[,c(3,5,7)])
 Howard_Data
 ```
 
