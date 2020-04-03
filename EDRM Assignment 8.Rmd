@@ -9,6 +9,7 @@ output: html_notebook
 This is for EDRM 718 Assignment 8 in which we will practice writing scripts and
 use the tidy verse package
 
+Load the package
 ```{r}
 library(tidyverse)
 ```
