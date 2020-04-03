@@ -10,23 +10,25 @@ This is for EDRM 718 Assignment 8 in which we will practice writing scripts and
 use the tidy verse package
 
 Load the package
-```{r}
+```{r include=FALSE}
 library(tidyverse)
 ```
 
 
 This is developing a script
 ```{r}
-Likert_Total <- function(x){
+Likert_Total <- function(x,y,z){
+  HD_Reversed <- abs(z-y)
   CC <- rowSums(x)
-  return(CC)
+  return(HD_Reversed)
 }
 ```
 
 
 Load in data
 ```{r Loading in Data, include=FALSE}
-HD <- read_csv("Howard's Data.csv")
+HD_ugly <- read_csv("Howard's Data.csv")
+HD <- HD_ugly[-1]
 HD
 ```
 
@@ -34,7 +36,7 @@ HD
 
 This is practicing that script with () data
 ```{r}
-Howard_Data <- Likert_Total(HD[-1])
+Howard_Data <- Likert_Total(HD, 7, HD[,c(3,5,7)])
 Howard_Data
 ```
 
