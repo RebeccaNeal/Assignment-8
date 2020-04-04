@@ -62,8 +62,22 @@ ggplot(data = hsb2) +
   geom_point(mapping = aes(x = math, y = science, color = female))
 ```
 
+Question 4
+```{r Math & science scores by gender in 2 plots}
+ggplot(data = hsb2) +
+  geom_point(mapping = aes(x = math, y = science)) +
+  facet_wrap(~ female)
+```
 
-
+Question 5
+## Creating quantile plot which shows the lines for the four quantiles of teh data
+```{r echo=TRUE}
+ggplot(data = hsb2, mapping = aes(x = math, y = science, color = ses)) +
+  geom_point() +
+  geom_quantile()
+  
+ 
+```
 
 
 
