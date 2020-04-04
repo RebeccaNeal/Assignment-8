@@ -39,9 +39,33 @@ HD
 
 
 This is practicing that script with () data
-```{r}
+```{r Using function with data}
 CTR <- c(3,5,7)
 Howard_Data <- Likert_Total(HD, 8, CTR)
 Howard_Data
 ```
+
+
+Load ggplot package
+```{r}
+library(ggplot2)
+```
+
+Read in hsb2 data
+```{r}
+hsb2 <- read_csv("hsb2.csv")
+```
+
+Question 3
+```{r Math & Science scores by gender, echo=FALSE}
+ggplot(data = hsb2) +
+  geom_point(mapping = aes(x = math, y = science, color = female))
+```
+
+
+
+
+
+
+
 
