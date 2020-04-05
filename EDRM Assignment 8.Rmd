@@ -15,7 +15,7 @@ library(tidyverse)
 ```
 
 
-This is developing a script
+This is a function to reverse score identified columns and create a total score
 ```{r}
 Likert_Total <- function(x,y,z){
   Reversed <- abs(x[,c(z)]-y)
@@ -23,7 +23,7 @@ Likert_Total <- function(x,y,z){
   Properly_Scored_Data_Frame <- cbind(Non_Reversed_Columns,Reversed)
   CC <- rowSums(Properly_Scored_Data_Frame)
   Total_Data_Frame <- cbind(Properly_Scored_Data_Frame,CC)
-  print(Total_Data_Frame)
+  write.csv(Total_Data_Frame)
   return(Total_Data_Frame)
 }
 ```
