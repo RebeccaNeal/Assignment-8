@@ -23,7 +23,7 @@ Likert_Total <- function(x,y,z){
   Properly_Scored_Data_Frame <- cbind(Non_Reversed_Columns,Reversed)
   CC <- rowSums(Properly_Scored_Data_Frame)
   Total_Data_Frame <- cbind(Properly_Scored_Data_Frame,CC)
-  write.csv(Total_Data_Frame)
+  write.csv("Total_Data_Frame", file = "Total Data Frame.csv", row.names = FALSE)
   return(Total_Data_Frame)
 }
 ```
@@ -38,11 +38,12 @@ HD
 
 
 
-This is practicing that script with () data
+This is practicing that script with Howard's data
 ```{r Using function with data}
 CTR <- c(3,5,7)
 Howard_Data <- Likert_Total(HD, 8, CTR)
 Howard_Data
+
 ```
 
 
